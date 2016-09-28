@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="myapp.tae.ac.uk.justeattest.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/app_bar"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/restaurant_results_activity">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/searchHintText"
+            android:id="@+id/tilSearch">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etSearch"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_action_device_gps"
+            android:layout_alignParentRight="true"
+            android:baselineAlignBottom="@id/tilSearch"
+            android:id="@+id/ivGPS"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prGPSProgress"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:layout_toLeftOf="@id/ivGPS"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_below="@id/tilSearch"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btSearch"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter Search"
+            android:layout_below="@id/btSearch"
+            android:id="@+id/tvFilterTitle"
+            style="@style/TitleText"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tvFilterFreeDel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Free Delivery"
+            android:layout_below="@id/tvFilterTitle"
+            android:layout_marginTop="16dp"/>
+
+        <CheckBox
+            android:id="@+id/cbFilterFreeDel"
+            android:layout_marginTop="16dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/tvFilterTitle"
+            android:layout_alignBaseline="@id/tvFilterFreeDel"/>
+
+        <TextView
+            android:id="@+id/tvFilterFoodHalal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Food Halal"
+            android:layout_below="@id/tvFilterFreeDel"
+            />
+
+        <CheckBox
+            android:id="@+id/cbFilterFoodHala"
+            android:layout_marginTop="16dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/tvFilterTitle"
+            android:layout_alignBaseline="@id/tvFilterFoodHalal"/>
+
+        <TextView
+            android:id="@+id/tvFilterRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Customers' Rating"
+            android:layout_below="@id/tvFilterFoodHalal"/>
+
+        <RatingBar
+            android:id="@+id/rbFilterRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="6"
+            android:stepSize="0.1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/tvFilterRating"/>
+
+    </RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
